@@ -22,16 +22,13 @@
             padding: 20px;
         }
 
-        /* কার্ড স্টাইল */
         .card {
             max-width: 500px;
             width: 100%;
             background: rgba(255, 255, 255, 0.96);
             border-radius: 48px;
             box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.05);
-            backdrop-filter: blur(2px);
             overflow: hidden;
-            transition: all 0.2s ease;
         }
 
         .header {
@@ -44,14 +41,12 @@
         .header h1 {
             font-size: 1.9rem;
             font-weight: 700;
-            letter-spacing: -0.3px;
             margin-bottom: 6px;
         }
 
         .header p {
             font-size: 0.95rem;
             opacity: 0.85;
-            font-weight: 400;
         }
 
         .buttons-container {
@@ -61,7 +56,6 @@
             gap: 20px;
         }
 
-        /* বাটন স্টাইল - বড় ও সহজে ট্যাপযোগ্য */
         .btn {
             display: block;
             width: 100%;
@@ -72,32 +66,25 @@
             text-decoration: none;
             border: none;
             border-radius: 60px;
-            background: white;
-            color: #1e293b;
             cursor: pointer;
             transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
             box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-            letter-spacing: 0.3px;
             font-family: inherit;
-            backdrop-filter: blur(2px);
             border: 1px solid rgba(255,255,255,0.3);
         }
 
-        /* আলাদা রঙের বাটন - মোবাইলে আকর্ষণীয় */
+        /* বাটনের রং - মোবাইলে আকর্ষণীয় */
         .btn:nth-child(1) { background: #ffecd2; color: #b45f1b; border-bottom: 3px solid #f3a683; }
         .btn:nth-child(2) { background: #d4f1f9; color: #0c6170; border-bottom: 3px solid #48cae4; }
         .btn:nth-child(3) { background: #e0f7e8; color: #2b6e3c; border-bottom: 3px solid #6abf69; }
         .btn:nth-child(4) { background: #fde2e2; color: #a03e3e; border-bottom: 3px solid #f4978e; }
         .btn:nth-child(5) { background: #ede2fc; color: #4a2c7a; border-bottom: 3px solid #b088f9; }
 
-        /* ক্লিক/টাচ ইফেক্ট */
         .btn:active {
             transform: scale(0.97);
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            transition: 0.05s;
         }
 
-        /* ফলব্যাক: hover শুধু মাউজের জন্য আগ্রহী করবে, মোবাইলে ইগনোর */
         @media (hover: hover) {
             .btn:hover {
                 transform: translateY(-2px);
@@ -105,7 +92,6 @@
             }
         }
 
-        /* ফুটারে ছোট তথ্য */
         .footer-note {
             text-align: center;
             padding: 12px 20px 20px;
@@ -116,7 +102,6 @@
             font-weight: 500;
         }
 
-        /* মোবাইলের জন্য অতিরিক্ত টাচ এলাকা নিশ্চিত */
         @media (max-width: 560px) {
             .buttons-container {
                 padding: 24px 20px 32px;
@@ -139,40 +124,36 @@
             <p>নিচের যেকোনো বাটনে ট্যাপ করুন → আপনার লিংকে নিয়ে যাবে</p>
         </div>
         <div class="buttons-container">
-            <!-- বাটন ১ → গুগল (উদাহরণ লিংক) -->
+            <!-- 🟢 আপনার লিংক এখানে বসান (href="..." এর ভিতর) -->
+            
             <a href="https://www.google.com" class="btn" target="_blank" rel="noopener noreferrer">
-                🔍 বাটন ১ - গুগল
+                🔍 বাটন ১ - লিংক ১
             </a>
-            <!-- বাটন ২ → ইউটিউব -->
+            <!-- উপরের লাল লেখার জায়গায় আপনার ১ম লিংক দিন -->
+
             <a href="https://www.youtube.com" class="btn" target="_blank" rel="noopener noreferrer">
-                🎬 বাটন ২ - ইউটিউব
+                🎬 বাটন ২ - লিংক ২
             </a>
-            <!-- বাটন ৩ → ফেসবুক -->
+            <!-- উপরের লাল লেখার জায়গায় আপনার ২য় লিংক দিন -->
+
             <a href="https://www.facebook.com" class="btn" target="_blank" rel="noopener noreferrer">
-                📘 বাটন ৩ - ফেসবুক
+                📘 বাটন ৩ - লিংক ৩
             </a>
-            <!-- বাটন ৪ → উইকিপিডিয়া -->
+            <!-- উপরের লাল লেখার জায়গায় আপনার ৩য় লিংক দিন -->
+
             <a href="https://www.wikipedia.org" class="btn" target="_blank" rel="noopener noreferrer">
-                🌐 বাটন ৪ - উইকিপিডিয়া
+                🌐 বাটন ৪ - লিংক ৪
             </a>
-            <!-- বাটন ৫ → আপনার পছন্দের একটি সাইট (উদাহরণ: GitHub) -->
+            <!-- উপরের লাল লেখার জায়গায় আপনার ৪র্থ লিংক দিন -->
+
             <a href="https://github.com" class="btn" target="_blank" rel="noopener noreferrer">
-                💻 বাটন ৫ - গিটহাব
+                💻 বাটন ৫ - লিংক ৫
             </a>
+            <!-- উপরের লাল লেখার জায়গায় আপনার ৫ম লিংক দিন -->
         </div>
         <div class="footer-note">
-            ⚡ প্রতিটি বাটনে ক্লিক করলেই নতুন ট্যাবে লিংক খুলবে<br>
-            (আপনি চাইলে `target="_self"` দিয়ে একই পেজেও খুলতে পারেন)
+            ⚡ প্রতিটি বাটনে ক্লিক করলেই নতুন ট্যাবে লিংক খুলবে
         </div>
     </div>
-
-    <!-- ছোট স্ক্রিপ্ট: মোবাইলে নিশ্চিত করা যে লিংক ব্লক না হয় (ঐচ্ছিক) 
-         এবং কনসোলে কোনো এরর থাকলে তা না দেখানোর জন্য -->
-    <script>
-        // শুধুমাত্র নিশ্চিত করছি যে সব বাটন এ কাজ করবে, 
-        // এবং টাচ ইভেন্টে ডিফল্ট কিছু ব্লক না হয়।
-        // কোনো বাড়তি লজিক দরকার নেই কারণ আমরা <a> ট্যাগ ব্যবহার করেছি।
-        console.log("মোবাইল ওয়েবসাইট প্রস্তুত — ৫টি বাটন ক্লিকযোগ্য");
-    </script>
 </body>
 </html>
