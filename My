@@ -1,89 +1,178 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Button Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>৫টি ক্লিক বাটন - মোবাইল সাইট</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-  <style>
-    body{
-      margin:0;
-      padding:0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg,#4facfe,#00f2fe);
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-    }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #e0eafc 0%, #cfdef3 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-    .container{
-      width:90%;
-      max-width:350px;
-      background:white;
-      padding:25px;
-      border-radius:20px;
-      text-align:center;
-      box-shadow:0 0 20px rgba(0,0,0,0.2);
-    }
+        /* কার্ড স্টাইল */
+        .card {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 48px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(2px);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
 
-    h1{
-      margin-bottom:20px;
-      color:#333;
-    }
+        .header {
+            background: #1a2a4f;
+            padding: 24px 20px 18px;
+            text-align: center;
+            color: white;
+        }
 
-    .btn{
-      display:block;
-      width:100%;
-      padding:15px;
-      margin:12px 0;
-      border:none;
-      border-radius:12px;
-      background:#007bff;
-      color:white;
-      font-size:18px;
-      cursor:pointer;
-      transition:0.3s;
-    }
+        .header h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 6px;
+        }
 
-    .btn:hover{
-      background:#0056b3;
-      transform:scale(1.03);
-    }
-  </style>
+        .header p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            font-weight: 400;
+        }
+
+        .buttons-container {
+            padding: 32px 24px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* বাটন স্টাইল - বড় ও সহজে ট্যাপযোগ্য */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 18px 12px;
+            font-size: 1.35rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 60px;
+            background: white;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.3px;
+            font-family: inherit;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* আলাদা রঙের বাটন - মোবাইলে আকর্ষণীয় */
+        .btn:nth-child(1) { background: #ffecd2; color: #b45f1b; border-bottom: 3px solid #f3a683; }
+        .btn:nth-child(2) { background: #d4f1f9; color: #0c6170; border-bottom: 3px solid #48cae4; }
+        .btn:nth-child(3) { background: #e0f7e8; color: #2b6e3c; border-bottom: 3px solid #6abf69; }
+        .btn:nth-child(4) { background: #fde2e2; color: #a03e3e; border-bottom: 3px solid #f4978e; }
+        .btn:nth-child(5) { background: #ede2fc; color: #4a2c7a; border-bottom: 3px solid #b088f9; }
+
+        /* ক্লিক/টাচ ইফেক্ট */
+        .btn:active {
+            transform: scale(0.97);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: 0.05s;
+        }
+
+        /* ফলব্যাক: hover শুধু মাউজের জন্য আগ্রহী করবে, মোবাইলে ইগনোর */
+        @media (hover: hover) {
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 14px 22px rgba(0, 0, 0, 0.12);
+            }
+        }
+
+        /* ফুটারে ছোট তথ্য */
+        .footer-note {
+            text-align: center;
+            padding: 12px 20px 20px;
+            font-size: 0.7rem;
+            color: #2c3e66;
+            background: #f8fafc;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            font-weight: 500;
+        }
+
+        /* মোবাইলের জন্য অতিরিক্ত টাচ এলাকা নিশ্চিত */
+        @media (max-width: 560px) {
+            .buttons-container {
+                padding: 24px 20px 32px;
+                gap: 18px;
+            }
+            .btn {
+                padding: 16px 12px;
+                font-size: 1.25rem;
+            }
+            .header h1 {
+                font-size: 1.65rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="card">
+        <div class="header">
+            <h1>📱 ক্লিক বাটন</h1>
+            <p>নিচের যেকোনো বাটনে ট্যাপ করুন → আপনার লিংকে নিয়ে যাবে</p>
+        </div>
+        <div class="buttons-container">
+            <!-- বাটন ১ → গুগল (উদাহরণ লিংক) -->
+            <a href="https://www.google.com" class="btn" target="_blank" rel="noopener noreferrer">
+                🔍 বাটন ১ - গুগল
+            </a>
+            <!-- বাটন ২ → ইউটিউব -->
+            <a href="https://www.youtube.com" class="btn" target="_blank" rel="noopener noreferrer">
+                🎬 বাটন ২ - ইউটিউব
+            </a>
+            <!-- বাটন ৩ → ফেসবুক -->
+            <a href="https://www.facebook.com" class="btn" target="_blank" rel="noopener noreferrer">
+                📘 বাটন ৩ - ফেসবুক
+            </a>
+            <!-- বাটন ৪ → উইকিপিডিয়া -->
+            <a href="https://www.wikipedia.org" class="btn" target="_blank" rel="noopener noreferrer">
+                🌐 বাটন ৪ - উইকিপিডিয়া
+            </a>
+            <!-- বাটন ৫ → আপনার পছন্দের একটি সাইট (উদাহরণ: GitHub) -->
+            <a href="https://github.com" class="btn" target="_blank" rel="noopener noreferrer">
+                💻 বাটন ৫ - গিটহাব
+            </a>
+        </div>
+        <div class="footer-note">
+            ⚡ প্রতিটি বাটনে ক্লিক করলেই নতুন ট্যাবে লিংক খুলবে<br>
+            (আপনি চাইলে `target="_self"` দিয়ে একই পেজেও খুলতে পারেন)
+        </div>
+    </div>
 
-  <div class="container">
-    <h1>আমার ওয়েবসাইট</h1>
-
-    <button class="btn" onclick="openLink('https://google.com')">
-      Button 1
-    </button>
-
-    <button class="btn" onclick="openLink('https://youtube.com')">
-      Button 2
-    </button>
-
-    <button class="btn" onclick="openLink('https://facebook.com')">
-      Button 3
-    </button>
-
-    <button class="btn" onclick="openLink('https://telegram.org')">
-      Button 4
-    </button>
-
-    <button class="btn" onclick="openLink('https://openai.com')">
-      Button 5
-    </button>
-  </div>
-
-  <script>
-    function openLink(url){
-      window.location.href = url;
-    }
-  </script>
-
+    <!-- ছোট স্ক্রিপ্ট: মোবাইলে নিশ্চিত করা যে লিংক ব্লক না হয় (ঐচ্ছিক) 
+         এবং কনসোলে কোনো এরর থাকলে তা না দেখানোর জন্য -->
+    <script>
+        // শুধুমাত্র নিশ্চিত করছি যে সব বাটন এ কাজ করবে, 
+        // এবং টাচ ইভেন্টে ডিফল্ট কিছু ব্লক না হয়।
+        // কোনো বাড়তি লজিক দরকার নেই কারণ আমরা <a> ট্যাগ ব্যবহার করেছি।
+        console.log("মোবাইল ওয়েবসাইট প্রস্তুত — ৫টি বাটন ক্লিকযোগ্য");
+    </script>
 </body>
 </html>
